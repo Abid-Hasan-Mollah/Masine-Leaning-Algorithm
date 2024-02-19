@@ -1,0 +1,15 @@
+# Assuming you have already imported necessary libraries and split your data
+from sklearn.svm import SVC
+
+# Create an instance of the SVM model
+svm_model = SVC()
+
+# Train the model on the training data
+svm_model.fit(X_train, y_train)
+
+# Predict on the test data
+y_pred_svm = svm_model.predict(X_test)
+
+# Calculate accuracy
+accuracy_svm = accuracy_score(y_test, y_pred_svm)
+print("Support Vector Machine Accuracy:", accuracy_svm)
