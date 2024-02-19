@@ -1,0 +1,14 @@
+from sklearn.neural_network import MLPClassifier
+
+# Initialize the MLPClassifier
+mlp = MLPClassifier()
+
+# Fit the MLPClassifier to the training data
+mlp.fit(X_train, y_train)
+
+# Predict the labels for the test set
+y_pred_mlp = mlp.predict(X_test)
+
+# Calculate accuracy
+accuracy_mlp = accuracy_score(y_test, y_pred_mlp)
+print("MLP Classifier Accuracy:", accuracy_mlp)
