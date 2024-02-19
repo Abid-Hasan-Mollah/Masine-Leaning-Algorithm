@@ -1,0 +1,15 @@
+# Assuming you have already imported necessary libraries and split your data
+from sklearn.tree import DecisionTreeClassifier
+
+# Create an instance of the Decision Tree model
+decision_tree = DecisionTreeClassifier()
+
+# Train the model on the training data
+decision_tree.fit(X_train, y_train)
+
+# Predict on the test data
+y_pred_decision_tree = decision_tree.predict(X_test)
+
+# Calculate accuracy
+accuracy_decision_tree = accuracy_score(y_test, y_pred_decision_tree)
+print("Decision Tree Accuracy:", accuracy_decision_tree)
