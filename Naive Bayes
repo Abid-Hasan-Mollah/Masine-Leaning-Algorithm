@@ -1,0 +1,15 @@
+# Assuming you have already imported necessary libraries and split your data
+from sklearn.naive_bayes import GaussianNB
+
+# Create an instance of the Naive Bayes model
+naive_bayes_model = GaussianNB()
+
+# Train the model on the training data
+naive_bayes_model.fit(X_train, y_train)
+
+# Predict on the test data
+y_pred_naive_bayes = naive_bayes_model.predict(X_test)
+
+# Calculate accuracy
+accuracy_naive_bayes = accuracy_score(y_test, y_pred_naive_bayes)
+print("Naive Bayes Accuracy:", accuracy_naive_bayes)
