@@ -1,0 +1,323 @@
+def LogisticRegressionBuild():
+  # Assuming you have already imported necessary libraries and split your data
+  from sklearn.linear_model import LogisticRegression
+
+  # Create an instance of the Logistic Regression model
+  log_reg = LogisticRegression()
+
+  # Train the model on the training data
+  log_reg.fit(X_train, y_train)
+
+  # Predict on the test data
+  y_pred_log_reg = log_reg.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_log_reg = accuracy_score(y_test, y_pred_log_reg)
+  return  accuracy_log_reg
+
+LogisticRegressionBuild_variable = LogisticRegressionBuild()
+
+
+def AdaBoostClassifierBuild():
+  from sklearn.ensemble import AdaBoostClassifier
+
+  # Creating AdaBoostClassifier instance
+  adaboost = AdaBoostClassifier()
+
+  # Training the model
+  adaboost.fit(X_train, y_train)
+
+  # Making predictions
+  y_pred = adaboost.predict(X_test)
+
+  # Calculating accuracy
+  accuracy = accuracy_score(y_test, y_pred)
+  return accuracy
+  
+AdaBoostClassifierBuild_variable = AdaBoostClassifierBuild()
+
+
+def CatBoostClassifierBuild():
+   # Assuming you have already imported necessary libraries and have your data loaded
+
+  # Install CatBoost if you haven't already
+  # !pip install catboost
+
+  from catboost import CatBoostClassifier
+  from sklearn.metrics import accuracy_score
+
+  # Define X and y
+  X = df.drop(columns='placed')
+  y = df['placed']
+
+  # Split the data into training and testing sets
+  from sklearn.model_selection import train_test_split
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
+  # Initialize and train CatBoostClassifier
+  catboost_model = CatBoostClassifier()
+  catboost_model.fit(X_train, y_train)
+
+  # Make predictions
+  y_pred = catboost_model.predict(X_test)
+
+  # Calculate accuracy
+  accuracy = accuracy_score(y_test, y_pred)
+  return accuracy
+
+CatBoostClassifierBuild_variable = CatBoostClassifierBuild()
+
+
+
+def DecisionTreeClassifier():
+  # Assuming you have already imported necessary libraries and split your data
+  from sklearn.tree import DecisionTreeClassifier
+
+  # Create an instance of the Decision Tree model
+  decision_tree = DecisionTreeClassifier()
+
+  # Train the model on the training data
+  decision_tree.fit(X_train, y_train)
+
+  # Predict on the test data
+  y_pred_decision_tree = decision_tree.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_decision_tree = accuracy_score(y_test, y_pred_decision_tree)
+  print("Decision Tree Accuracy:", accuracy_decision_tree)
+  return accuracy_decision_tree
+
+DecisionTreeClassifier_variable = DecisionTreeClassifier()
+
+def GradientBoostingClassifierBuild():
+  from sklearn.model_selection import train_test_split
+  from sklearn.ensemble import GradientBoostingClassifier
+  from sklearn.metrics import accuracy_score
+
+  # Assuming X and y are defined as in your code
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
+  # Create a Gradient Boosting Classifier
+  gbm = GradientBoostingClassifier()
+
+  # Train the model
+  gbm.fit(X_train, y_train)
+
+  # Make predictions
+  y_pred = gbm.predict(X_test)
+
+  # Calculate accuracy
+  accuracy = accuracy_score(y_test, y_pred)
+  return accuracy
+
+GradientBoostingClassifierBuild_variable = GradientBoostingClassifierBuild() 
+
+
+def KNeighborsClassifierBuild():
+  # Assuming you have already imported necessary libraries and split your data
+  from sklearn.neighbors import KNeighborsClassifier
+
+  # Create an instance of the KNN model
+  knn_model = KNeighborsClassifier()
+
+  # Train the model on the training data
+  knn_model.fit(X_train, y_train)
+
+  # Predict on the test data
+  y_pred_knn = knn_model.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_knn = accuracy_score(y_test, y_pred_knn)
+  
+  return accuracy_knn
+
+
+KNeighborsClassifierBuild_variable = KNeighborsClassifierBuild()
+
+
+def LinearDiscriminantAnalysis():
+  from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+  from sklearn.metrics import accuracy_score
+
+  # Assuming you already have X and y defined as per your original code
+
+  # Split the data into training and testing sets
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
+  # Initialize the LDA classifier
+  lda = LinearDiscriminantAnalysis()
+ 
+  # Fit the LDA model to the training data
+  lda.fit(X_train, y_train)
+
+  # Predict the labels for the test set
+  y_pred = lda.predict(X_test)
+
+  # Calculate accuracy score
+  accuracy = accuracy_score(y_test, y_pred)
+
+  return accuracy
+LinearDiscriminantAnalysis_variable = LinearDiscriminantAnalysis()
+
+
+def MLPClassifier():
+  from sklearn.neural_network import MLPClassifier
+
+  # Initialize the MLPClassifier
+  mlp = MLPClassifier()
+
+  # Fit the MLPClassifier to the training data
+  mlp.fit(X_train, y_train)
+
+  # Predict the labels for the test set
+  y_pred_mlp = mlp.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_mlp = accuracy_score(y_test, y_pred_mlp)
+  return accuracy_mlp
+
+MLPClassifier_variable = MLPClassifier()
+
+def GaussianNB():
+  # Assuming you have already imported necessary libraries and split your data
+  from sklearn.naive_bayes import GaussianNB
+
+  # Create an instance of the Naive Bayes model
+  naive_bayes_model = GaussianNB()
+
+  # Train the model on the training data
+  naive_bayes_model.fit(X_train, y_train)
+
+  # Predict on the test data
+  y_pred_naive_bayes = naive_bayes_model.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_naive_bayes = accuracy_score(y_test, y_pred_naive_bayes)
+  return accuracy_naive_bayes
+
+GaussianNB_variable = GaussianNB()
+
+def Neural_Networks_Deep_learning():
+  import tensorflow as tf
+  from sklearn.model_selection import train_test_split
+  from sklearn.metrics import accuracy_score
+  from sklearn.preprocessing import StandardScaler
+
+  # Assuming you have already defined X and y from your DataFrame
+
+  # Standardize features by removing the mean and scaling to unit variance
+  scaler = StandardScaler()
+  X_scaled = scaler.fit_transform(X)
+
+  # Splitting the data into training and testing sets
+  X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=2)
+
+  # Define the neural network architecture
+  model = tf.keras.Sequential([
+    tf.keras.layers.Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+    tf.keras.layers.Dense(32, activation='relu'),
+    tf.keras.layers.Dense(1, activation='sigmoid')
+  ])
+
+  # Compile the model
+  model.compile(optimizer='adam',
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
+
+  # Train the model
+  model.fit(X_train, y_train, epochs=10, batch_size=32, verbose=1)
+
+  # Evaluate the model
+  y_pred_proba = model.predict(X_test)
+  y_pred = (y_pred_proba > 0.5).astype(int)  # Converting probabilities to binary predictions
+  accuracy = accuracy_score(y_test, y_pred)
+  return accuracy
+
+
+Neural_Networks_Deep_learning_variavle = Neural_Networks_Deep_learning()
+
+def RandomForestClassifierBuild():
+  X = df.drop(columns='placed')
+  y = df['placed']
+
+  from sklearn.model_selection import train_test_split
+  X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=2)
+
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.metrics import accuracy_score
+
+  rf= RandomForestClassifier()
+
+  rf.fit(X_train, y_train)
+  y_pred = rf.predict(X_test)
+
+  accuracy_score(y_test,y_pred) 
+
+RandomForestClassifierBuild_varible = RandomForestClassifierBuild()
+
+
+def SVM():
+  # Assuming you have already imported necessary libraries and split your data
+  from sklearn.svm import SVC
+
+  # Create an instance of the SVM model
+  svm_model = SVC()
+
+  # Train the model on the training data
+  svm_model.fit(X_train, y_train)
+
+  # Predict on the test data
+  y_pred_svm = svm_model.predict(X_test)
+
+  # Calculate accuracy
+  accuracy_svm = accuracy_score(y_test, y_pred_svm)
+ 
+  return accuracy_svm
+SVM_variable = SVM()
+
+def xgb():
+  import xgboost as xgb
+
+  # Convert your DataFrame to DMatrix, which is the internal data structure used by XGBoost
+  dtrain = xgb.DMatrix(X_train, label=y_train)
+  dtest = xgb.DMatrix(X_test, label=y_test)
+
+  # Define parameters for XGBoost classifier
+  params = {
+    'objective': 'binary:logistic',  # for binary classification
+    'eval_metric': 'error'  # evaluation metric
+  }
+
+  # Train the XGBoost classifier
+  num_rounds = 100  # You can adjust the number of boosting rounds
+  bst = xgb.train(params, dtrain, num_rounds)
+
+  # Make predictions
+  y_pred_prob = bst.predict(dtest)
+  y_pred = [1 if x > 0.5 else 0 for x in y_pred_prob]
+
+  # Calculate accuracy
+  accuracy = accuracy_score(y_test, y_pred)
+  
+  return accuracy
+
+xgb_variable = xgb()
+
+
+##########################################################
+
+print("LogisticRegressionBuild_variable        ",LogisticRegressionBuild_variable)
+print("AdaBoostClassifierBuild_variable        ",AdaBoostClassifierBuild_variable)
+print("CatBoostClassifierBuild_variable        ",CatBoostClassifierBuild_variable)
+print("DecisionTreeClassifier_variable         ",DecisionTreeClassifier_variable)
+print("GradientBoostingClassifierBuild_variable",GradientBoostingClassifierBuild_variable)
+print("KNeighborsClassifierBuild_variable    ",KNeighborsClassifierBuild_variable)
+print("LinearDiscriminantAnalysis_variable",LinearDiscriminantAnalysis_variable)
+print("MLPClassifier_variable               ",MLPClassifier_variable)
+print("GaussianNB_variable                  ",GaussianNB_variable)
+print("Neural_Networks_Deep_learning_variavle",Neural_Networks_Deep_learning_variavle)
+print("RandomForestClassifierBuild_varible",RandomForestClassifierBuild_varible)
+print("SVM_variable                        ",SVM_variable)
+print("xgb_variable                        ",xgb_variable)
+
+
