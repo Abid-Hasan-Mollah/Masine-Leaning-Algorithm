@@ -1,0 +1,15 @@
+# Assuming you have already imported necessary libraries and split your data
+from sklearn.linear_model import LogisticRegression
+
+# Create an instance of the Logistic Regression model
+log_reg = LogisticRegression()
+
+# Train the model on the training data
+log_reg.fit(X_train, y_train)
+
+# Predict on the test data
+y_pred_log_reg = log_reg.predict(X_test)
+
+# Calculate accuracy
+accuracy_log_reg = accuracy_score(y_test, y_pred_log_reg)
+print("Logistic Regression Accuracy:", accuracy_log_reg)
