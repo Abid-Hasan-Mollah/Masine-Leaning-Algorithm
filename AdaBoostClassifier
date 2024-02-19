@@ -1,0 +1,14 @@
+from sklearn.ensemble import AdaBoostClassifier
+
+# Creating AdaBoostClassifier instance
+adaboost = AdaBoostClassifier()
+
+# Training the model
+adaboost.fit(X_train, y_train)
+
+# Making predictions
+y_pred = adaboost.predict(X_test)
+
+# Calculating accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
